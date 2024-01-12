@@ -7,6 +7,8 @@ const csurf = require('csurf');
 const cors = require('cors');
 const { isProduction } = require('./config/keys');
 
+require('./models/User');
+
 const usersRouter = require('./routes/api/users');
 const gamesRouter = require("./routes/api/games");
 const csrfRouter = require("./routes/api/csrf");
