@@ -8,6 +8,8 @@ const cors = require('cors');
 const { isProduction } = require('./config/keys');
 
 require('./models/User');
+require('./config/passport');
+const passport = require('passport');
 
 const usersRouter = require('./routes/api/users');
 const gamesRouter = require("./routes/api/games");
@@ -19,6 +21,8 @@ app.use(logger('dev')); // log request components (URL/method) to terminal
 app.use(express.json()); // parse JSON request body
 app.use(express.urlencoded({ extended: false })); // parse urlencoded request body
 app.use(cookieParser()); // parse cookies as an object on req.cookies
+
+app.use(passport.initialize());
 
 if (!isProduction) {
     app.use(cors())
