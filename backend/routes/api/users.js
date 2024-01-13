@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 const passport = require('passport');
+const { loginUser } = require('../../config/passport');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
