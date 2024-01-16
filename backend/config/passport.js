@@ -2,6 +2,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const { Strategy: JwtStrategy, ExtractJwt } = require('passport-jwt');
 const { secretOrKey } = require('./keys');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
